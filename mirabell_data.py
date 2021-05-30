@@ -46,27 +46,72 @@ def each_property():
   for p_tag_element in element:
     print(p_tag_element.text)
   print("---- 物件概要 ----")
+  # 物件名
   element = driver.find_element_by_css_selector("#content03 table tbody tr th")
   print(element.text, end=':')
   element = driver.find_element_by_css_selector("#content03 table tbody tr td")
   print(element.text)
+  # 所在地
   element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(2) th")
   print(element.text, end=':')
   element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(2) td")
+  # 小学校学区
   print(element.text)
   element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(3) th")
   print(element.text, end=':')
   element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(3) td")
   print(element.text)
+  # 交通・アクセス
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(4) th")
+  print(element.text, end=':')
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(4) td")
+  print(element.text)
+  # 物件種別
   element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(5) th")
   print(element.text, end=':')
   element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(5) td")
+  print(element.text)
+  # 賃料・共益費用/管理費用
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(6) th")
+  print(element.text, end=':')
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(6) td")
+  print(element.text)
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(6) th:nth-of-type(2)")
+  print(element.text, end=':')
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(6) td:nth-of-type(2)")
+  print(element.text)
+  # 占有面積・間取り
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(7) th")
+  print(element.text, end=':')
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(7) td")
+  print(element.text)
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(7) th:nth-of-type(2)")
+  print(element.text, end=':')
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(7) td:nth-of-type(2)")
+  print(element.text)
+  # 築年数・建物構造
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(8) th")
+  print(element.text, end=':')
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(8) td")
+  print(element.text)
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(8) th:nth-of-type(2)")
+  print(element.text, end=':')
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(8) td:nth-of-type(2)")
+  print(element.text)
+  # 総階数・総戸数
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(9) th")
+  print(element.text, end=':')
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(9) td")
+  print(element.text)
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(9) th:nth-of-type(2)")
+  print(element.text, end=':')
+  element = driver.find_element_by_css_selector("#content03 table tbody tr:nth-child(9) td:nth-of-type(2)")
   print(element.text)
 
   element = driver.find_elements_by_css_selector("#content01 p")
   print("---- 備考 ----")
   element = driver.find_element_by_css_selector("#content04 p")
-  print("備考", element.text)
+  print(element.text)
   print("---- 建物設備（共通部分） ----")
   element = driver.find_elements_by_css_selector("#content06 ul li")
   for li_tag_element in element:
@@ -74,16 +119,12 @@ def each_property():
 
   print("")
   print("")
-  print("")
-  print("")
-  print("")
-  print("")
 
 
 # メイン処理
 property_amount = 1
 # TODO rangeを直すこと
-for i in range(0, 1):
+for i in range(0, 2):
   property_link = page_function(property_amount)[0]
   print(property_link)
   for index, property_page in enumerate(property_link):
